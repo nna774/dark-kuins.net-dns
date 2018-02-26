@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  deploy:
+    docker:
+      - image: hashicorp/terraform:latest
+    steps:
+      - checkout
+      - run: terraform plan
+      - run: terraform apply -auto-approve
+workflows:
+  version: 2
+  all:
+    jobs:
+      - deploy

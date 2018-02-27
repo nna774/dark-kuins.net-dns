@@ -4,7 +4,6 @@ resource "cloudflare_record" "kizuna" {
   value  = "192.50.220.190"
   type   = "A"
   proxied = false
-#  ttl    = 3600
 }
 resource "cloudflare_record" "kizuna-6" {
   domain = "${var.cloudflare_domain}"
@@ -19,7 +18,6 @@ resource "cloudflare_record" "kizuna-force4" {
   value  = "192.50.220.190"
   type   = "A"
   proxied = false
-#  ttl    = 3600
 }
 resource "cloudflare_record" "kizuna-force6" {
   domain = "${var.cloudflare_domain}"
@@ -27,4 +25,12 @@ resource "cloudflare_record" "kizuna-force6" {
   value  = "2001:df0:8500:a700::1"
   type   = "AAAA"
   proxied = false
+}
+
+resource "cloudflare_record" "keybase-io" {
+  domain = "${var.cloudflare_domain}"
+  name   = "${var.cloudflare_domain}"
+  value  = "keybase-site-verification=qlDaCiZkoK-_G17K8WTsVG2kVuwJYqGzkVbfj2bZCwo"
+  type   = "TXT"
+  ttl    = 86400
 }

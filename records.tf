@@ -34,3 +34,11 @@ resource "cloudflare_record" "keybase-io" {
   type   = "TXT"
   ttl    = 86400
 }
+
+resource "cloudflare_record" "google-site-verification" {
+  domain = "${var.cloudflare_domain}"
+  name   = "${var.cloudflare_domain}"
+  value  = "google-site-verification=706gPugltIAlN2H_7qB68DA9sy07G_GyF25O1jGK3m8"
+  type   = "TXT"
+  ttl    = 86400
+}

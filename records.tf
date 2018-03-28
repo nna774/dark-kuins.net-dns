@@ -27,6 +27,35 @@ resource "cloudflare_record" "kizuna-force6" {
   proxied = false
 }
 
+resource "cloudflare_record" "ushio" {
+  domain = "${var.cloudflare_domain}"
+  name   = "ushio.kitashirakawa.${var.cloudflare_domain}"
+  value  = "192.50.220.189"
+  type   = "A"
+  proxied = false
+}
+resource "cloudflare_record" "ushio-6" {
+  domain = "${var.cloudflare_domain}"
+  name   = "ushio.kitashirakawa.${var.cloudflare_domain}"
+  value  = "2001:df0:8500:a700::35"
+  type   = "AAAA"
+  proxied = false
+}
+resource "cloudflare_record" "ushio-force4" {
+  domain = "${var.cloudflare_domain}"
+  name   = "v4.ushio.kitashirakawa.${var.cloudflare_domain}"
+  value  = "192.50.220.189"
+  type   = "A"
+  proxied = false
+}
+resource "cloudflare_record" "ushio-force6" {
+  domain = "${var.cloudflare_domain}"
+  name   = "v6.ushio.kitashirakawa.${var.cloudflare_domain}"
+  value  = "2001:df0:8500:a700::35"
+  type   = "AAAA"
+  proxied = false
+}
+
 resource "cloudflare_record" "keybase-io" {
   domain = "${var.cloudflare_domain}"
   name   = "${var.cloudflare_domain}"

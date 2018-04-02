@@ -2,7 +2,7 @@ version: 2
 jobs:
   deploy:
     docker:
-      - image: hashicorp/terraform:latest
+      - image: nna774/terraform:latest
     steps:
       - checkout
       - run: ruby make_records.rb > generated.tf

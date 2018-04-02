@@ -44,3 +44,11 @@ resource "cloudflare_record" "www" {
   type   = "CNAME"
   proxied = true
 }
+
+resource "cloudflare_record" "inside" {
+  domain = "${var.cloudflare_domain}"
+  name   = "inside.${var.cloudflare_domain}"
+  value  = "ushio.compute.kitashirakawa.dark-kuins.net"
+  type   = "CNAME"
+  proxied = false
+}

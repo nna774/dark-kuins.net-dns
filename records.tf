@@ -40,7 +40,7 @@ resource "cloudflare_record" "at-aaaa" {
 resource "cloudflare_record" "www" {
   domain = "${var.cloudflare_domain}"
   name   = "www.${var.cloudflare_domain}"
-  value  = "c.storage.googleapis.com."
+  value  = "c.storage.googleapis.com"
   type   = "CNAME"
   proxied = true
 }

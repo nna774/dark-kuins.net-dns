@@ -10,3 +10,7 @@ dark-kuins.net:
       ushio:
         v4: 192.50.220.189
         v6: 2001:df0:8500:a700::35
+  mogamigawa:
+    compute:
+      torifune:
+        v4: 35.224.12.152

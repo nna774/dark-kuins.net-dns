@@ -1,5 +1,5 @@
 dark-kuins.net:
-  kitashirakawa:
+  kitashirakawa: # my home
     router:
       kizuna:
         v4: 192.50.220.190
@@ -10,7 +10,12 @@ dark-kuins.net:
       ushio:
         v4: 192.50.220.189
         v6: 2001:df0:8500:a700::35
-  mogamigawa:
+  mogamigawa: # GCP
     compute:
       torifune:
         v4: 35.224.12.152
+  tachikawa: # ConoHa
+    compute:
+      sakura:
+        v4: 133.130.121.80
+        v6: 2400:8500:1302:800:133:130:121:80

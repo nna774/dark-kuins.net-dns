@@ -36,14 +36,14 @@ def f(domain, region, kind, host, value)
     xs << {
       key: "#{host}-short",
       name: "#{host}.#{kind[0]}.#{region}",
-      value: value['v4'],
-      type: 'A',
+      value: "#{host}.#{kind}.#{region}.${var.cloudflare_domain}",
+      type: 'CNAME',
     }
     xs << {
       key: "#{host}-force-v4-short",
       name: "v4.#{host}.#{kind[0]}.#{region}",
-      value: value['v4'],
-      type: 'A',
+      value: "v4.#{host}.#{kind}.#{region}.${var.cloudflare_domain}",
+      type: 'CNAME',
     }
   end
   if !value['v6'].nil?
@@ -62,14 +62,14 @@ def f(domain, region, kind, host, value)
     xs << {
       key: "#{host}-6-short",
       name: "#{host}.#{kind[0]}.#{region}",
-      value: value['v6'],
-      type: 'AAAA',
+      value: "#{host}.#{kind}.#{region}.${var.cloudflare_domain}",
+      type: 'CNAME',
     }
     xs << {
       key: "#{host}-force-v6-short",
       name: "v6.#{host}.#{kind[0]}.#{region}",
-      value: value['v6'],
-      type: 'AAAA',
+      value: "v6.#{host}.#{kind}.#{region}.${var.cloudflare_domain}",
+      type: 'CNAME',
     }
   end
 

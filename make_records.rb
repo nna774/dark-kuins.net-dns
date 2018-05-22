@@ -103,7 +103,7 @@ yml.each do |domain, v|
   v&.each do |region, v|
     v&.each do |kind, hosts|
       hosts&.each do |host, value|
-        puts f(domain, region, kind, host, value)
+        puts f(domain, region, kind, host, value || {})
       end
     end
   end

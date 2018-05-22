@@ -12,7 +12,6 @@ dark-kuins.net:
         v6: 2001:df0:8500:a700::35
   mogamigawa: # GCP
     compute:
-      devel3: # ephemeral addr(for CNAMEs)
       torifune:
         v4: 35.224.12.152
   tachikawa: # ConoHa

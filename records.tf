@@ -60,6 +60,13 @@ resource "cloudflare_record" "devel3-short" {
   type   = "CNAME"
   proxied = false
 }
+resource "cloudflare_record" "devel3-very-short" {
+  domain = "${var.cloudflare_domain}"
+  name   = "devel3.c.m.${var.cloudflare_domain}"
+  value  = "devel3.compute.mogamigawa.${var.cloudflare_domain}"
+  type   = "CNAME"
+  proxied = false
+}
 resource "cloudflare_record" "devel3-force-v4" {
   domain = "${var.cloudflare_domain}"
   name   = "v4.devel3.compute.mogamigawa.${var.cloudflare_domain}"
@@ -70,6 +77,13 @@ resource "cloudflare_record" "devel3-force-v4" {
 resource "cloudflare_record" "devel3-force-v4-short" {
   domain = "${var.cloudflare_domain}"
   name   = "v4.devel3.c.mogamigawa.${var.cloudflare_domain}"
+  value  = "v4.devel3.compute.mogamigawa.${var.cloudflare_domain}"
+  type   = "CNAME"
+  proxied = false
+}
+resource "cloudflare_record" "devel3-force-v4-very-short" {
+  domain = "${var.cloudflare_domain}"
+  name   = "v4.devel3.c.m.${var.cloudflare_domain}"
   value  = "v4.devel3.compute.mogamigawa.${var.cloudflare_domain}"
   type   = "CNAME"
   proxied = false

@@ -26,6 +26,8 @@ dark-kuins.net:
       router:
         - yukari
         - kizuna
+      switch:
         - octocat
         - noracat
+      ap:
         - tokinosora

@@ -99,11 +99,47 @@ def f(domain, region, kind, host, value)
   xs.map(&method(:build))
 end
 
+def iii(domain, region, kinds)
+  to = kinds.delete('to')
+  raise if to.nil?
+  xs = []
+  kinds.each do |kind, hosts|
+    hosts.each do |host|
+      xs << {
+        key: "iii-#{host}-short",
+        name: "#{host}.#{kind[0]}.#{region}.iii",
+        value: "#{host}.#{kind}.#{region}.iii.${var.cloudflare_domain}",
+        type: 'CNAME',
+      }
+      xs << {
+        key: "iii-#{host}-very-short",
+        name: "#{host}.#{kind[0]}.#{region[0]}.iii",
+        value: "#{host}.#{kind}.#{region}.iii.${var.cloudflare_domain}",
+        type: 'CNAME',
+      }
+      xs << {
+        key: "iii-#{host}",
+        name: "#{host}.#{kind}.#{region}.iii",
+        value: to,
+        type: 'CNAME',
+      }
+    end
+  end
+
+  xs.map(&method(:build))
+end
+
 yml.each do |domain, v|
   v&.each do |region, v|
-    v&.each do |kind, hosts|
-      hosts&.each do |host, value|
-        puts f(domain, region, kind, host, value || {})
+    if region == 'iii'
+      v&.each do |region, kinds|
+        puts iii(domain, region, kinds)
+      end
+    else
+      v&.each do |kind, hosts|
+        hosts&.each do |host, value|
+          puts f(domain, region, kind, host, value || {})
+        end
       end
     end
   end

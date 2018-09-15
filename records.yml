@@ -19,3 +19,13 @@ dark-kuins.net:
       sakura:
         v4: 133.130.121.80
         v6: 2400:8500:1302:800:133:130:121:80
+
+  iii: # private
+    kitashirakawa:
+      to: ushio.compute.kitashirakawa.dark-kuins.net
+      router:
+        - yukari
+        - kizuna
+        - octocat
+        - noracat
+        - tokinosora

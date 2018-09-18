@@ -45,6 +45,14 @@ resource "cloudflare_record" "www" {
   proxied = true
 }
 
+resource "cloudflare_record" "auth" {
+  domain = "${var.cloudflare_domain}"
+  name   = "auth.${var.cloudflare_domain}"
+  value  = "auth.dark-kuins.net.herokudns.com"
+  type   = "CNAME"
+  proxied = false
+}
+
 resource "cloudflare_record" "inside" {
   domain = "${var.cloudflare_domain}"
   name   = "inside.${var.cloudflare_domain}"

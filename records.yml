@@ -10,6 +10,9 @@ dark-kuins.net:
       ushio:
         v4: 192.50.220.189
         v6: 2001:df0:8500:a700::35
+    border:
+      sumi:
+        v6: 240b:250:8020:d00:3141:5926:5358:9793
   mogamigawa: # GCP
     compute:
       torifune:

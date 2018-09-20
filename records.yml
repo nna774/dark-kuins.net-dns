@@ -22,6 +22,10 @@ dark-kuins.net:
       sakura:
         v4: 133.130.121.80
         v6: 2400:8500:1302:800:133:130:121:80
+  nishiogikubo: # AWS
+    compute:
+      tsugu:
+        v6: 2406:da14:37f:7c00::129
 
   iii: # private
     kitashirakawa:

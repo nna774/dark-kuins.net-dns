@@ -53,6 +53,14 @@ resource "cloudflare_record" "auth" {
   proxied = true
 }
 
+resource "cloudflare_record" "netbox" {
+  domain = "${var.cloudflare_domain}"
+  name   = "netbox.${var.cloudflare_domain}"
+  value  = "ushio.compute.kitashirakawa.dark-kuins.net"
+  type   = "CNAME"
+  proxied = false
+}
+
 resource "cloudflare_record" "inside" {
   domain = "${var.cloudflare_domain}"
   name   = "inside.${var.cloudflare_domain}"

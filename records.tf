@@ -48,7 +48,7 @@ resource "cloudflare_record" "www" {
 resource "cloudflare_record" "auth" {
   domain = "${var.cloudflare_domain}"
   name   = "auth.${var.cloudflare_domain}"
-  value  = "auth.dark-kuins.net.herokudns.com"
+  value  = "auth-dark-kuins-net.herokuapp.com"
   type   = "CNAME"
   proxied = true
 }

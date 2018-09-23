@@ -50,7 +50,7 @@ resource "cloudflare_record" "auth" {
   name   = "auth.${var.cloudflare_domain}"
   value  = "auth.dark-kuins.net.herokudns.com"
   type   = "CNAME"
-  proxied = false
+  proxied = true
 }
 
 resource "cloudflare_record" "inside" {

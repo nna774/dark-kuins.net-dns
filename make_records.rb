@@ -20,27 +20,29 @@ end
 
 def f(domain, region, kind, host, value)
   xs = []
-  xs << {
-    key: "#{host}-short",
-    name: "#{host}.#{kind[0]}.#{region}",
-    value: "#{host}.#{kind}.#{region}.${var.cloudflare_domain}",
-    type: 'CNAME',
-  }
-  xs << {
-    key: "#{host}-very-short",
-    name: "#{host}.#{kind[0]}.#{region[0]}",
-    value: "#{host}.#{kind}.#{region}.${var.cloudflare_domain}",
-    type: 'CNAME',
-  }
   cname = value['cname']
+  cname_suf = ''
   if !cname.nil?
+    cname_suf = '-cname'
     xs << {
-      key: host,
+      key: "#{host}-cname",
       name: "#{host}.#{kind}.#{region}",
       value: cname,
       type: 'CNAME',
     }
   end
+  xs << {
+    key: "#{host}#{cname_suf}-short",
+    name: "#{host}.#{kind[0]}.#{region}",
+    value: "#{host}.#{kind}.#{region}.${var.cloudflare_domain}",
+    type: 'CNAME',
+  }
+  xs << {
+    key: "#{host}#{cname_suf}-very-short",
+    name: "#{host}.#{kind[0]}.#{region[0]}",
+    value: "#{host}.#{kind}.#{region}.${var.cloudflare_domain}",
+    type: 'CNAME',
+  }
   v4 = value['v4']
   if !v4.nil?
     xs << {

@@ -16,7 +16,7 @@ dark-kuins.net:
   mogamigawa: # GCP
     compute:
       torifune:
-        v4: 35.224.12.152
+        v4: 35.229.60.135
   tachikawa: # ConoHa
     compute:
       sakura:

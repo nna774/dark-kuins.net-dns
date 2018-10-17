@@ -32,7 +32,7 @@ dark-kuins.net:
         cname: tsugu.compute.nishiogikubo.dark-kuins.net
   megurogawa:
     compute:
-      devel3:
+      dev:
         v4: 35.221.123.139
 
   iii: # private

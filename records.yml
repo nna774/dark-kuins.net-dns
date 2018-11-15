@@ -26,7 +26,7 @@ dark-kuins.net:
     compute:
       tsugu:
         v4: 18.182.161.30
-        v6: 2406:da14:37f:7c0a::10
+        v6: 2406:da14:37f:7c0d::10
     router:
       tsugu:
         cname: tsugu.compute.nishiogikubo.dark-kuins.net

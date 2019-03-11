@@ -131,11 +131,24 @@ def iii(domain, region, kinds)
   xs.map(&method(:build))
 end
 
+def acm(from, to)
+  build({
+    key: "acm-validation-#{from}",
+    name: from,
+    value: to,
+    type: 'CNAME',
+  })
+end
+
 yml.each do |domain, v|
   v&.each do |region, v|
     if region == 'iii'
       v&.each do |region, kinds|
         puts iii(domain, region, kinds)
+      end
+    elsif region == 'acm'
+      v&.each do |from, to|
+        puts acm(from, to)
       end
     else
       v&.each do |kind, hosts|

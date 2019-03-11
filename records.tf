@@ -104,11 +104,3 @@ resource "cloudflare_record" "devel3-force-v4-very-short" {
   type   = "CNAME"
   proxied = false
 }
-
-resource "cloudflare_record" "acm-validation" {
-  domain = "${var.cloudflare_domain}"
-  name   = "_0310ee90e6f191d354b84416d079d502.iii.${var.cloudflare_domain}"
-  value  = "_d80f808aa326a3c450e2eddae0573e89.hkvuiqjoua.acm-validations.aws."
-  type   = "CNAME"
-  proxied = false
-}

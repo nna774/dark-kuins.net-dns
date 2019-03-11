@@ -48,5 +48,5 @@ dark-kuins.net:
         - tokinosora
       compute:
         - ushio
-  acm:
-    _0310ee90e6f191d354b84416d079d502.iii: _d80f808aa326a3c450e2eddae0573e89.hkvuiqjoua.acm-validations.aws.
+  acm_iii:
+    _0310ee90e6f191d354b84416d079d502: _d80f808aa326a3c450e2eddae0573e89.hkvuiqjoua.acm-validations.aws.

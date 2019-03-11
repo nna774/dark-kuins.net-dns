@@ -133,7 +133,7 @@ end
 
 def acm_iii(from, to)
   build({
-    key: "acm-validation-#{from}",
+    key: "acm-validation-#{from.gsub(/\./, '-')}",
     name: from + '.iii',
     value: to,
     type: 'CNAME',

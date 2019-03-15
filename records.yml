@@ -48,6 +48,10 @@ dark-kuins.net:
         - tokinosora
       compute:
         - ushio
+    nishiogikubo:
+      to: tsugu.compute.nishiogikubo.dark-kuins.net
+      compute:
+        - tsugu
   acm_iii:
     _0310ee90e6f191d354b84416d079d502: _d80f808aa326a3c450e2eddae0573e89.hkvuiqjoua.acm-validations.aws.
     _78a9d2479c0054f2714577f08ed56e95.tsugu.compute.nishiogikubo: _9cbc87f698300ea5c5cab81f3791689e.hkvuiqjoua.acm-validations.aws.

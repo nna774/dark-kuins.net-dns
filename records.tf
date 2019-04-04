@@ -104,3 +104,11 @@ resource "cloudflare_record" "devel3-force-v4-very-short" {
   type   = "CNAME"
   proxied = false
 }
+
+resource "cloudflare_record" "grafana" {
+  domain = "${var.cloudflare_domain}"
+  name   = "grafana.${var.cloudflare_domain}"
+  value  = "tsugu.compute.nishiogikubo.dark-kuins.net"
+  type   = "CNAME"
+  proxied = false
+}

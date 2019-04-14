@@ -116,7 +116,7 @@ resource "cloudflare_record" "grafana" {
 resource "cloudflare_record" "rack-auth-request-testkun" {
   domain = "${var.cloudflare_domain}"
   name   = "rack-auth-request-testkun.${var.cloudflare_domain}"
-  value  = "cellular-tor-7uc3rxmsmag21jkb0t48p4wr.herokudns.com"
+  value  = "rack-auth-request-testkun.herokuapp.com"
   type   = "CNAME"
   proxied = true
 }

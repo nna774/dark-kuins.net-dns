@@ -113,10 +113,17 @@ resource "cloudflare_record" "grafana" {
   proxied = false
 }
 
+resource "cloudflare_record" "rack-auth-request-testkun-herokuapp" {
+  domain = "${var.cloudflare_domain}"
+  name   = "rack-auth-request-testkun.herokuapp.${var.cloudflare_domain}"
+  value  = "rack-auth-request-testkun.herokuapp.com"
+  type   = "CNAME"
+  proxied = true
+}
 resource "cloudflare_record" "rack-auth-request-testkun" {
   domain = "${var.cloudflare_domain}"
   name   = "rack-auth-request-testkun.${var.cloudflare_domain}"
-  value  = "rack-auth-request-testkun.herokuapp.com"
+  value  = "rack-auth-request-testkun.herokuapp.${var.cloudflare_domain}"
   type   = "CNAME"
   proxied = true
 }

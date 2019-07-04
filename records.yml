@@ -17,6 +17,10 @@ dark-kuins.net:
     compute:
       torifune:
         v4: 35.229.60.135
+  nakanoshima:
+    compute:
+      kasuga:
+        v4: 34.97.190.191
   tachikawa: # ConoHa
     compute:
       sakura:

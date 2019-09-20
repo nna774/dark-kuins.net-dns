@@ -36,6 +36,22 @@ resource "cloudflare_record" "at-aaaa" {
   type   = "AAAA"
   proxied = false
 }
+resource "cloudflare_record" "items" {
+  count  = "${length(var.gae_ips)}"
+  domain = "${var.cloudflare_domain}"
+  name   = "${var.cloudflare_domain}"
+  value  = "${element(var.gae_ips, count.index)}"
+  type   = "A"
+  proxied = false
+}
+resource "cloudflare_record" "items-aaaa" {
+  count  = "${length(var.gae_ipv6s)}"
+  domain = "${var.cloudflare_domain}"
+  name   = "${var.cloudflare_domain}"
+  value  = "${element(var.gae_ipv6s, count.index)}"
+  type   = "AAAA"
+  proxied = false
+}
 
 resource "cloudflare_record" "www" {
   domain = "${var.cloudflare_domain}"

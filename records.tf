@@ -39,7 +39,7 @@ resource "cloudflare_record" "at-aaaa" {
 resource "cloudflare_record" "items" {
   count  = "${length(var.gae_ips)}"
   domain = "${var.cloudflare_domain}"
-  name   = "${var.cloudflare_domain}"
+  name   = "items.${var.cloudflare_domain}"
   value  = "${element(var.gae_ips, count.index)}"
   type   = "A"
   proxied = false
@@ -47,7 +47,7 @@ resource "cloudflare_record" "items" {
 resource "cloudflare_record" "items-aaaa" {
   count  = "${length(var.gae_ipv6s)}"
   domain = "${var.cloudflare_domain}"
-  name   = "${var.cloudflare_domain}"
+  name   = "items.${var.cloudflare_domain}"
   value  = "${element(var.gae_ipv6s, count.index)}"
   type   = "AAAA"
   proxied = false

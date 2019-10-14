@@ -7,7 +7,7 @@ yml = YAML.load_file 'records.yml'
 def build(r)
   str = <<EOS
 resource "#{@resource}" "#{r[:key]}" {
-  domain = "${var.cloudflare_domain}"
+  zone_id = "${var.cloudflare_zone}"
   name   = "#{r[:name]}.${var.cloudflare_domain}"
   value  = "#{r[:value]}"
   type   = "#{r[:type]}"

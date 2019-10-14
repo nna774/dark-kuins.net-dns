@@ -85,6 +85,21 @@ resource "cloudflare_record" "inside" {
   proxied = false
 }
 
+resource "cloudflare_record" "smtp" {
+  domain = "${var.cloudflare_domain}"
+  name   = "smtp.${var.cloudflare_domain}"
+  value  = "tsugu.compute.nishiogikubo.dark-kuins.net"
+  type   = "CNAME"
+  proxied = false
+}
+resource "cloudflare_record" "spf" {
+  domain = "${var.cloudflare_domain}"
+  name   = "${var.cloudflare_domain}"
+  value  = "v=spf1 a:smtp.dark-kuins.net ~all"
+  type   = "TXT"
+  proxied = false
+}
+
 resource "cloudflare_record" "devel3-short" {
   domain = "${var.cloudflare_domain}"
   name   = "devel3.c.mogamigawa.${var.cloudflare_domain}"

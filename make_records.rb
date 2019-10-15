@@ -160,8 +160,16 @@ def acm_iii(domain, from, to)
 end
 
 def acm(domain, from, to)
+  cname_imp(domain, "acm-validation-#{from.gsub(/\./, ?-)}", from, to)
+end
+
+def cname(domain, from, to)
+  cname_imp(domain, "cname-#{domain.gsub(/\./, ?-)}-#{from.gsub(/\./, ?-)}", from, to)
+end
+
+def cname_imp(domain, key, from, to)
   build({
-    key: "acm-validation-#{from.gsub(/\./, '-')}",
+    key: key,
     name: from,
     value: to,
     type: 'CNAME',
@@ -182,6 +190,10 @@ yml.each do |domain, v|
     elsif region == 'acm'
       v&.each do |from, to|
         puts acm(domain, from, to)
+      end
+    elsif region == 'cname'
+      v&.each do |from, to|
+        puts cname(domain, from, to)
       end
     else
       v&.each do |kind, hosts|

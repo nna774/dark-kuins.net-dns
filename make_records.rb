@@ -7,8 +7,8 @@ yml = YAML.load_file 'records.yml'
 def build(r)
   str = <<EOS
 resource "#{@resource}" "#{r[:key]}" {
-  zone_id = "${var.cloudflare_zone}"
-  name   = "#{r[:name]}.${var.cloudflare_domain}"
+  zone_id = "${var.dark-kuins_zone}"
+  name   = "#{r[:name]}.${var.dark-kuins-net}"
   value  = "#{r[:value]}"
   type   = "#{r[:type]}"
   proxied = false
@@ -34,13 +34,13 @@ def f(domain, region, kind, host, value)
   xs << {
     key: "#{host}#{cname_suf}-short",
     name: "#{host}.#{kind[0]}.#{region}",
-    value: "#{host}.#{kind}.#{region}.${var.cloudflare_domain}",
+    value: "#{host}.#{kind}.#{region}.${var.dark-kuins-net}",
     type: 'CNAME',
   }
   xs << {
     key: "#{host}#{cname_suf}-very-short",
     name: "#{host}.#{kind[0]}.#{region[0]}",
-    value: "#{host}.#{kind}.#{region}.${var.cloudflare_domain}",
+    value: "#{host}.#{kind}.#{region}.${var.dark-kuins-net}",
     type: 'CNAME',
   }
   v4 = value['v4']
@@ -60,13 +60,13 @@ def f(domain, region, kind, host, value)
     xs << {
       key: "#{host}-force-v4-short",
       name: "v4.#{host}.#{kind[0]}.#{region}",
-      value: "v4.#{host}.#{kind}.#{region}.${var.cloudflare_domain}",
+      value: "v4.#{host}.#{kind}.#{region}.${var.dark-kuins-net}",
       type: 'CNAME',
     }
     xs << {
       key: "#{host}-force-v4-very-short",
       name: "v4.#{host}.#{kind[0]}.#{region[0]}",
-      value: "v4.#{host}.#{kind}.#{region}.${var.cloudflare_domain}",
+      value: "v4.#{host}.#{kind}.#{region}.${var.dark-kuins-net}",
       type: 'CNAME',
     }
   end
@@ -87,13 +87,13 @@ def f(domain, region, kind, host, value)
     xs << {
       key: "#{host}-force-v6-short",
       name: "v6.#{host}.#{kind[0]}.#{region}",
-      value: "v6.#{host}.#{kind}.#{region}.${var.cloudflare_domain}",
+      value: "v6.#{host}.#{kind}.#{region}.${var.dark-kuins-net}",
       type: 'CNAME',
     }
     xs << {
       key: "#{host}-force-v6-very-short",
       name: "v6.#{host}.#{kind[0]}.#{region[0]}",
-      value: "v6.#{host}.#{kind}.#{region}.${var.cloudflare_domain}",
+      value: "v6.#{host}.#{kind}.#{region}.${var.dark-kuins-net}",
       type: 'CNAME',
     }
   end
@@ -110,13 +110,13 @@ def iii(domain, region, kinds)
       xs << {
         key: "iii-#{host}-short",
         name: "#{host}.#{kind[0]}.#{region}.iii",
-        value: "#{host}.#{kind}.#{region}.iii.${var.cloudflare_domain}",
+        value: "#{host}.#{kind}.#{region}.iii.${var.dark-kuins-net}",
         type: 'CNAME',
       }
       xs << {
         key: "iii-#{host}-very-short",
         name: "#{host}.#{kind[0]}.#{region[0]}.iii",
-        value: "#{host}.#{kind}.#{region}.iii.${var.cloudflare_domain}",
+        value: "#{host}.#{kind}.#{region}.iii.${var.dark-kuins-net}",
         type: 'CNAME',
       }
       xs << {

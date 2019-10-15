@@ -1,8 +1,8 @@
 variable "cloudflare_api_token" {}
-variable "cloudflare_domain" {
+variable "dark-kuins-net" {
   default = "dark-kuins.net"
 }
-variable "cloudflare_zone" {
+variable "dark-kuins_zone" {
   default = "3353f56b0ad3326c345123fbb8192169"
 }
 provider "cloudflare" {

@@ -132,9 +132,13 @@ def iii(domain, region, kinds)
 end
 
 def acm_iii(from, to)
+  acm(from + '.iii', to)
+end
+
+def acm(from, to)
   build({
     key: "acm-validation-#{from.gsub(/\./, '-')}",
-    name: from + '.iii',
+    name: from,
     value: to,
     type: 'CNAME',
   })

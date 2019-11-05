@@ -13,7 +13,7 @@ workflows:
   version: 2
   all:
     jobs:
-      - deploy
+      - deploy:
           filters:
             branches:
               only: master

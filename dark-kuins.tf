@@ -72,7 +72,7 @@ resource "cloudflare_record" "auth" {
 resource "cloudflare_record" "netbox" {
   zone_id = "${var.dark-kuins_zone}"
   name   = "netbox.${var.dark-kuins-net}"
-  value  = "marine-llama-k8hopnjz5caolxoiidhfr10f.herokudns.com"
+  value  = "dk-netbox.herokuapp.com"
   type   = "CNAME"
   proxied = true
 }

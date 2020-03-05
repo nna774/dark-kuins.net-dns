@@ -23,7 +23,7 @@ variable "gae_ipv6s" {
 resource "cloudflare_record" "at" {
   count  = length(var.gae_ips)
   zone_id = var.dark-kuins_zone
-  name   = "var.dark-kuins-net
+  name   = var.dark-kuins-net
   value  = element(var.gae_ips, count.index)
   type   = "A"
   proxied = false

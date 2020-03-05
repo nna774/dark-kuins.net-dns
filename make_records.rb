@@ -5,11 +5,11 @@ yml = YAML.load_file 'records.yml'
 @resource = 'cloudflare_record'
 @domains = {
   'dark-kuins.net' => {
-    zone_id: '${var.dark-kuins_zone}',
+    zone_id: 'var.dark-kuins_zone',
     suffix: '${var.dark-kuins-net}',
   },
   'nna774.net' => {
-    zone_id: '${var.nna774_zone}',
+    zone_id: 'var.nna774_zone',
     suffix: '${var.nna774-net}',
   },
 }
@@ -17,7 +17,7 @@ yml = YAML.load_file 'records.yml'
 def build(r)
   str = <<EOS
 resource "#{@resource}" "#{r[:key]}" {
-  zone_id = "#{@domains[r[:domain]][:zone_id]}"
+  zone_id = #{@domains[r[:domain]][:zone_id]}
   name   = "#{r[:name]}.#{@domains[r[:domain]][:suffix]}"
   value  = "#{r[:value]}"
   type   = "#{r[:type]}"

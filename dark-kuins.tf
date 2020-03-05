@@ -143,18 +143,3 @@ resource "cloudflare_record" "grafana" {
   type   = "CNAME"
   proxied = false
 }
-
-resource "cloudflare_record" "rack-auth-request-testkun-herokuapp" {
-  zone_id = "${var.dark-kuins_zone}"
-  name   = "rack-auth-request-testkun--herokuapp.${var.dark-kuins-net}"
-  value  = "rack-auth-request-testkun.herokuapp.com"
-  type   = "CNAME"
-  proxied = true
-}
-resource "cloudflare_record" "rack-auth-request-testkun" {
-  zone_id = "${var.dark-kuins_zone}"
-  name   = "rack-auth-request-testkun.${var.dark-kuins-net}"
-  value  = "rack-auth-request-testkun--herokuapp.${var.dark-kuins-net}"
-  type   = "CNAME"
-  proxied = true
-}

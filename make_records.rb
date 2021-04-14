@@ -24,7 +24,7 @@ resource "#{@resource}" "#{r[:key]}" {
   proxied = false
 }
 EOS
-  
+
   str
 end
 
@@ -155,16 +155,20 @@ def iii(domain, region, kinds)
   xs.map(&method(:build))
 end
 
+def esc(name)
+  name.gsub(/\./, ?-)
+end
+
 def acm_iii(domain, from, to)
   acm(domain, from + '.iii', to)
 end
 
 def acm(domain, from, to)
-  cname_imp(domain, "acm-validation-#{from.gsub(/\./, ?-)}", from, to)
+  cname_imp(domain, "acm-validation-#{esc(from)}", from, to)
 end
 
 def cname(domain, from, to)
-  cname_imp(domain, "cname-#{domain.gsub(/\./, ?-)}-#{from.gsub(/\./, ?-)}", from, to)
+  cname_imp(domain, "cname-#{esc(domain)}-#{esc(from)}", from, to)
 end
 
 def cname_imp(domain, key, from, to)
@@ -174,6 +178,16 @@ def cname_imp(domain, key, from, to)
     value: to,
     type: 'CNAME',
     domain: domain,
+  })
+end
+
+def txt(domain, from, val)
+  build({
+    key: "txt-#{esc(domain)}-#{esc(from)}",
+    name: from,
+    value: val,
+    type: 'TXT',
+    domain: domain
   })
 end
 
@@ -194,6 +208,10 @@ yml.each do |domain, v|
     elsif region == 'cname'
       v&.each do |from, to|
         puts cname(domain, from, to)
+      end
+    elsif region == 'txt'
+      v&.each do |from, val|
+        puts txt(domain, from, val)
       end
     else
       v&.each do |kind, hosts|

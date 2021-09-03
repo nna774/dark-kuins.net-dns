@@ -2,7 +2,7 @@ version: 2
 jobs:
   deploy:
     docker:
-      - image: nna774/terraform:latest
+      - image: docker.pkg.github.com/nna774/docker-layer/terraform:latest
     steps:
       - checkout
       - run: ruby make_records.rb | tee generated.tf

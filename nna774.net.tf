@@ -1,3 +1,28 @@
+variable "nna774-cloudfront" {
+  default = "d1n5wgn7m5o0pa.cloudfront.net"
+}
+resource "cloudflare_record" "at-nna774-net" {
+  zone_id = var.nna774_zone
+  name   = var.nna774-net
+  value  = var.nna774-cloudfront
+  type   = "CNAME"
+  proxied = true
+}
+resource "cloudflare_record" "www-nna774-net" {
+  zone_id = var.nna774_zone
+  name   = "www.${var.nna774-net}"
+  value  = var.nna774-cloudfront
+  type   = "CNAME"
+  proxied = true
+}
+resource "cloudflare_record" "blog-nna774-net" {
+  zone_id = var.nna774_zone
+  name   = "blog.${var.nna774-net}"
+  value  = var.nna774-cloudfront
+  type   = "CNAME"
+  proxied = true
+}
+
 resource "cloudflare_record" "status-nna774-net-a" {
   zone_id = var.nna774_zone
   name   = "status.${var.nna774-net}"

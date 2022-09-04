@@ -88,10 +88,11 @@ resource "cloudflare_record" "inside" {
 resource "cloudflare_record" "smtp" {
   zone_id = var.dark-kuins_zone
   name   = "smtp.${var.dark-kuins-net}"
-  value  = "tsugu.compute.nishiogikubo.dark-kuins.net"
+  value  = "hoshino.compute.kitashirakawa.dark-kuins.net"
   type   = "CNAME"
   proxied = false
 }
+
 resource "cloudflare_record" "spf" {
   zone_id = var.dark-kuins_zone
   name   = var.dark-kuins-net

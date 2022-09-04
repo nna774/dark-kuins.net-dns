@@ -7,12 +7,9 @@ dark-kuins.net:
       yukari:
         v6: 2001:df0:8500:a700::2
     compute:
-      ushio:
-        v4: 192.50.220.189
-        v6: 2001:df0:8500:a700::35
-    border:
-      sumi:
-        v6: 240b:250:8020:d00:3141:5926:5358:9793
+      hoshino:
+        v4: 192.50.220.185
+        v6: 2001:df0:8500:a702::14
   mogamigawa: # GCP
     compute:
       torifune:
@@ -29,13 +26,9 @@ dark-kuins.net:
     router:
       tsugu:
         cname: tsugu.compute.nishiogikubo.dark-kuins.net
-  megurogawa:
-    compute:
-      dev:
-        v4: 34.97.154.98
   iii: # private
     kitashirakawa:
-      to: ushio.compute.kitashirakawa.dark-kuins.net
+      to: hoshino.compute.kitashirakawa.dark-kuins.net
       router:
         - yukari
         - kizuna
@@ -44,8 +37,6 @@ dark-kuins.net:
         - noracat
       ap:
         - tokinosora
-      compute:
-        - ushio
     nishiogikubo:
       to: tsugu.compute.nishiogikubo.dark-kuins.net
       compute:

@@ -61,14 +61,6 @@ resource "cloudflare_record" "www" {
   proxied = true
 }
 
-resource "cloudflare_record" "auth" {
-  zone_id = var.dark-kuins_zone
-  name   = "auth.${var.dark-kuins-net}"
-  value  = "auth-dark-kuins-net.herokuapp.com"
-  type   = "CNAME"
-  proxied = true
-}
-
 resource "cloudflare_record" "netbox" {
   zone_id = var.dark-kuins_zone
   name   = "netbox.${var.dark-kuins-net}"

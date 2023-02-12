@@ -44,3 +44,41 @@ resource "cloudflare_record" "status-nna774-net-txt" {
   type   = "TXT"
   proxied = false
 }
+
+resource "cloudflare_record" "i-nna774-net-mx-01" {
+  zone_id = var.nna774_zone
+  name   = "i.${var.nna774-net}"
+  value  = "mx01.mail.icloud.com"
+  priority = 10
+  type   = "MX"
+  proxied = false
+}
+resource "cloudflare_record" "i-nna774-net-mx-02" {
+  zone_id = var.nna774_zone
+  name   = "i.${var.nna774-net}"
+  value  = "mx02.mail.icloud.com"
+  priority = 10
+  type   = "MX"
+  proxied = false
+}
+resource "cloudflare_record" "i-nna774-net-mx-validation" {
+  zone_id = var.nna774_zone
+  name   = "i.${var.nna774-net}"
+  value  = "apple-domain=qrJNVBJOHk2sWNwU"
+  type   = "TXT"
+  proxied = false
+}
+resource "cloudflare_record" "i-nna774-net-mx-spf" {
+  zone_id = var.nna774_zone
+  name   = "i.${var.nna774-net}"
+  value  = "v=spf1 include:icloud.com ~all"
+  type   = "TXT"
+  proxied = false
+}
+resource "cloudflare_record" "i-nna774-net-mx-dkim" {
+  zone_id = var.nna774_zone
+  name   = "sig1._domainkey.i.${var.nna774-net}"
+  value  = "sig1.dkim.i.nna774.net.at.icloudmailadmin.com."
+  type   = "CNAME"
+  proxied = false
+}

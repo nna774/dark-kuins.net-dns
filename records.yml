@@ -5,6 +5,7 @@ dark-kuins.net:
         v4: 192.50.220.190
         v6: 2001:df0:8500:a700::1
       yukari:
+        v4: 192.50.220.189
         v6: 2001:df0:8500:a700::2
     compute:
       hoshino:

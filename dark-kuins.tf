@@ -128,11 +128,3 @@ resource "cloudflare_record" "devel3-force-v4-very-short" {
   type   = "CNAME"
   proxied = false
 }
-
-resource "cloudflare_record" "grafana" {
-  zone_id = var.dark-kuins_zone
-  name   = "grafana.${var.dark-kuins-net}"
-  value  = "tsugu.compute.nishiogikubo.dark-kuins.net"
-  type   = "CNAME"
-  proxied = false
-}

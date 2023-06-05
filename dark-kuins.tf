@@ -92,39 +92,3 @@ resource "cloudflare_record" "spf" {
   type   = "TXT"
   proxied = false
 }
-
-resource "cloudflare_record" "devel3-short" {
-  zone_id = var.dark-kuins_zone
-  name   = "devel3.c.mogamigawa.${var.dark-kuins-net}"
-  value  = "devel3.compute.mogamigawa.${var.dark-kuins-net}"
-  type   = "CNAME"
-  proxied = false
-}
-resource "cloudflare_record" "devel3-very-short" {
-  zone_id = var.dark-kuins_zone
-  name   = "devel3.c.m.${var.dark-kuins-net}"
-  value  = "devel3.compute.mogamigawa.${var.dark-kuins-net}"
-  type   = "CNAME"
-  proxied = false
-}
-resource "cloudflare_record" "devel3-force-v4" {
-  zone_id = var.dark-kuins_zone
-  name   = "v4.devel3.compute.mogamigawa.${var.dark-kuins-net}"
-  value  = "devel3.compute.mogamigawa.${var.dark-kuins-net}"
-  type   = "CNAME"
-  proxied = false
-}
-resource "cloudflare_record" "devel3-force-v4-short" {
-  zone_id = var.dark-kuins_zone
-  name   = "v4.devel3.c.mogamigawa.${var.dark-kuins-net}"
-  value  = "v4.devel3.compute.mogamigawa.${var.dark-kuins-net}"
-  type   = "CNAME"
-  proxied = false
-}
-resource "cloudflare_record" "devel3-force-v4-very-short" {
-  zone_id = var.dark-kuins_zone
-  name   = "v4.devel3.c.m.${var.dark-kuins-net}"
-  value  = "v4.devel3.compute.mogamigawa.${var.dark-kuins-net}"
-  type   = "CNAME"
-  proxied = false
-}

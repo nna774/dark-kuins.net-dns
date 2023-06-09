@@ -68,7 +68,6 @@ nna774.net:
     # lo0: lo0.nna774.net
     lo1: lo2.nna774.net
     lo2: lo1.nna774.net
-    tumblr: domains.tumblr.com
     unicorn: ghs.googlehosted.com
     nozomi.api-gateway: d-9gfuxjh93l.execute-api.ap-northeast-1.amazonaws.com
     nippo-kaku.api-gateway: d-ujjdnn76bl.execute-api.ap-northeast-1.amazonaws.com

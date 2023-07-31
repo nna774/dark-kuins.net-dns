@@ -85,7 +85,7 @@ resource "cloudflare_record" "i-nna774-net-mx-dkim" {
 
 resource "cloudflare_record" "bluesky" {
   zone_id = var.nna774_zone
-  name   = "_atproto.${var.nna774_zone}"
+  name   = "_atproto.${var.nna774-net}"
   value  = "did=did:plc:dczkfrezqx3qijv3up5o4ljl"
   type   = "TXT"
   proxied = false

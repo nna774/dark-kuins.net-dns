@@ -92,11 +92,3 @@ resource "cloudflare_record" "spf" {
   type   = "TXT"
   proxied = false
 }
-
-resource "cloudflare_record" "bluesky" {
-  zone_id = var.dark-kuins_zone
-  name   = "_atproto.${var.dark-kuins-net}"
-  value  = "did=did:plc:dczkfrezqx3qijv3up5o4ljl"
-  type   = "TXT"
-  proxied = false
-}

@@ -98,5 +98,5 @@ resource "cloudflare_record" "bluesky" {
   name   = "_atproto.${var.dark-kuins-net}"
   value  = "did=did:plc:dczkfrezqx3qijv3up5o4ljl"
   type   = "TXT"
-  proxied = true
+  proxied = false
 }

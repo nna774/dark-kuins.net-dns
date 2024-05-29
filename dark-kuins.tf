@@ -92,3 +92,18 @@ resource "cloudflare_record" "spf" {
   type   = "TXT"
   proxied = false
 }
+
+resource "cloudflare_record" "kizuna-ptp-yume" {
+  zone_id = var.dark-kuins_zone
+  name   = "ptp-yume.kizuna.router.kitashirakawa.${var.dark-kuins-net}"
+  value  = "2001:df0:8500:22:0:a7:0:b"
+  type   = "AAAA"
+  proxied = false
+}
+resource "cloudflare_record" "kizuna-ptp-rola" {
+  zone_id = var.dark-kuins_zone
+  name   = "ptp-rola.kizuna.router.kitashirakawa.${var.dark-kuins-net}"
+  value  = "2001:df0:8500:22:0:a7:1:b"
+  type   = "AAAA"
+  proxied = false
+}

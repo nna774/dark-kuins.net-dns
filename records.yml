@@ -10,6 +10,8 @@ dark-kuins.net:
       love:
         v4: 192.50.220.188
         v6: 2001:df0:8500:a700::a
+      ao:
+        v4: 192.50.220.191
     compute:
       hoshino:
         v4: 192.50.220.185

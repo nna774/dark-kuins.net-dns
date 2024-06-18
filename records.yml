@@ -69,8 +69,6 @@ nna774.net:
     _8cd22505b39e04aa193c121b337f0fe1.www: _3765591ac5e1131b1aa5e960f9c2fa9b.olprtlswtu.acm-validations.aws
     _be55fe090bbcd5b95f0a946cc847fb00.auth: _7d42b244cd82d19b62a2ac777ec6ea92.tljzshvwok.acm-validations.aws
     _ed7a87b1827486dc9b4e4d89c8adf3b3.api-gateway: _cb84b86d844711608525da14c497d323.auiqqraehs.acm-validations.aws
-    _6886cbdebf1a64dae5240fe0e0680e6b: _55a39876be1374088149adabe130d718.olprtlswtu.acm-validations.aws.
-    _6886cbdebf1a64dae5240fe0e0680e6b: _55a39876be1374088149adabe130d718.olprtlswtu.acm-validations.aws.
   cname:
     # lo0: lo0.nna774.net
     lo1: lo2.nna774.net
@@ -79,5 +77,6 @@ nna774.net:
     nozomi.api-gateway: d-9gfuxjh93l.execute-api.ap-northeast-1.amazonaws.com
     nippo-kaku.api-gateway: d-ujjdnn76bl.execute-api.ap-northeast-1.amazonaws.com
     s: d-k19sxlr4gg.execute-api.ap-northeast-1.amazonaws.com
+    fav: d2b8a0h62fas5l.cloudfront.net
   txt:
     _github-challenge-dark-kuins-net: c6542a8aca

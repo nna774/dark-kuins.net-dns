@@ -16,11 +16,7 @@ dark-kuins.net:
       hoshino:
         v4: 192.50.220.185
         v6: 2001:df0:8500:a702::14
-  mogamigawa: # GCP
-    compute:
-      torifune:
-        v4: 35.229.60.135
-  nakanoshima:
+  nakanoshima: #GCP
     compute:
       kasuga:
         v4: 34.97.190.191

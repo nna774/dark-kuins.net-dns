@@ -18,9 +18,9 @@ def build(r)
   <<~EOS
     resource "#{@resource}" "#{r[:key]}" {
       zone_id = #{@domains[r[:domain]][:zone_id]}
-      name   = "#{r[:name]}.#{@domains[r[:domain]][:suffix]}"
-      value  = "#{r[:value]}"
-      type   = "#{r[:type]}"
+      name = "#{r[:name]}.#{@domains[r[:domain]][:suffix]}"
+      content = "#{r[:value]}"
+      type = "#{r[:type]}"
       proxied = false
     }
   EOS

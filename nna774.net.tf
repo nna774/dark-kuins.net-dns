@@ -4,21 +4,21 @@ variable "nna774-cloudfront" {
 resource "cloudflare_record" "at-nna774-net" {
   zone_id = var.nna774_zone
   name   = var.nna774-net
-  value  = var.nna774-cloudfront
+  content = var.nna774-cloudfront
   type   = "CNAME"
   proxied = true
 }
 resource "cloudflare_record" "www-nna774-net" {
   zone_id = var.nna774_zone
   name   = "www.${var.nna774-net}"
-  value  = var.nna774-cloudfront
+  content = var.nna774-cloudfront
   type   = "CNAME"
   proxied = true
 }
 resource "cloudflare_record" "blog-nna774-net" {
   zone_id = var.nna774_zone
   name   = "blog.${var.nna774-net}"
-  value  = var.nna774-cloudfront
+  content = var.nna774-cloudfront
   type   = "CNAME"
   proxied = true
 }
@@ -26,21 +26,21 @@ resource "cloudflare_record" "blog-nna774-net" {
 resource "cloudflare_record" "status-nna774-net-a" {
   zone_id = var.nna774_zone
   name   = "status.${var.nna774-net}"
-  value  = "34.120.54.55"
+  content = "34.120.54.55"
   type   = "A"
   proxied = false
 }
 resource "cloudflare_record" "status-nna774-net-aaaa" {
   zone_id = var.nna774_zone
   name   = "status.${var.nna774-net}"
-  value  = "2600:1901:0:6d85::"
+  content = "2600:1901:0:6d85::"
   type   = "AAAA"
   proxied = false
 }
 resource "cloudflare_record" "status-nna774-net-txt" {
   zone_id = var.nna774_zone
   name   = "status.${var.nna774-net}"
-  value  = "deno-com-validation=20baf8aee23c4c734d9ce30a"
+  content = "deno-com-validation=20baf8aee23c4c734d9ce30a"
   type   = "TXT"
   proxied = false
 }
@@ -48,7 +48,7 @@ resource "cloudflare_record" "status-nna774-net-txt" {
 resource "cloudflare_record" "i-nna774-net-mx-01" {
   zone_id = var.nna774_zone
   name   = "i.${var.nna774-net}"
-  value  = "mx01.mail.icloud.com"
+  content = "mx01.mail.icloud.com"
   priority = 10
   type   = "MX"
   proxied = false
@@ -56,7 +56,7 @@ resource "cloudflare_record" "i-nna774-net-mx-01" {
 resource "cloudflare_record" "i-nna774-net-mx-02" {
   zone_id = var.nna774_zone
   name   = "i.${var.nna774-net}"
-  value  = "mx02.mail.icloud.com"
+  content = "mx02.mail.icloud.com"
   priority = 10
   type   = "MX"
   proxied = false
@@ -64,21 +64,21 @@ resource "cloudflare_record" "i-nna774-net-mx-02" {
 resource "cloudflare_record" "i-nna774-net-mx-validation" {
   zone_id = var.nna774_zone
   name   = "i.${var.nna774-net}"
-  value  = "apple-domain=qrJNVBJOHk2sWNwU"
+  content = "apple-domain=qrJNVBJOHk2sWNwU"
   type   = "TXT"
   proxied = false
 }
 resource "cloudflare_record" "i-nna774-net-mx-spf" {
   zone_id = var.nna774_zone
   name   = "i.${var.nna774-net}"
-  value  = "v=spf1 include:icloud.com ~all"
+  content = "v=spf1 include:icloud.com ~all"
   type   = "TXT"
   proxied = false
 }
 resource "cloudflare_record" "i-nna774-net-mx-dkim" {
   zone_id = var.nna774_zone
   name   = "sig1._domainkey.i.${var.nna774-net}"
-  value  = "sig1.dkim.i.nna774.net.at.icloudmailadmin.com."
+  content = "sig1.dkim.i.nna774.net.at.icloudmailadmin.com."
   type   = "CNAME"
   proxied = false
 }
@@ -86,7 +86,7 @@ resource "cloudflare_record" "i-nna774-net-mx-dkim" {
 resource "cloudflare_record" "bluesky" {
   zone_id = var.nna774_zone
   name   = "_atproto.${var.nna774-net}"
-  value  = "did=did:plc:dczkfrezqx3qijv3up5o4ljl"
+  content = "did=did:plc:dczkfrezqx3qijv3up5o4ljl"
   type   = "TXT"
   proxied = false
 }

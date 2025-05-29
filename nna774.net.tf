@@ -90,3 +90,12 @@ resource "cloudflare_record" "bluesky" {
   type   = "TXT"
   proxied = false
 }
+
+resource "cloudflare_record" "example" {
+  zone_id = var.nna774_zone
+  name   = "example.${var.nna774-net}"
+  content = "192.50.220.189"
+  type   = "A"
+  proxied = false
+}
+

@@ -60,6 +60,9 @@ dark-kuins.net:
     auth: d-4kbv8131wa.execute-api.ap-northeast-1.amazonaws.com
     prometheus: tsugu.compute.nishiogikubo.dark-kuins.net
     grafana: prometheus.dark-kuins.net
+    # 自宅地震計(NamazuHaUrokoGaNai)。CloudFront前段。必ずgrey(proxied=false)。
+    namazu: dvrrliarhuuc3.cloudfront.net
+    api.namazu: d131uynvrf3xou.cloudfront.net
 nna774.net:
   acm:
     _6886cbdebf1a64dae5240fe0e0680e6b: _55a39876be1374088149adabe130d718.olprtlswtu.acm-validations.aws

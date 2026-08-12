@@ -54,6 +54,8 @@ dark-kuins.net:
     _af9228b14cecea35943f138a59eb6b75: _c1b5c79467f691f8e2b5f4a59d39472e.auiqqraehs.acm-validations.aws
     _310ce12cb3fad6aee7d7b40756fa8330.namazu: _b7b330cbe914f9b3e2bd2a7f9e3c5f86.jkddzztszm.acm-validations.aws
     _3f5d7c27a8ccf914faecc19dd970792f.api.namazu: _dbc8e4b75a89cb26dad2184b15de46c1.jkddzztszm.acm-validations.aws
+    _65bb567af5d1788f1400e73806deb078.electabuzz: _bc72dc3babdd987a360f0c241c1d2a91.jkddzztszm.acm-validations.aws
+    _0be9559bfa8bb9782f280ce5329ac2a7.api.electabuzz: _fdbfbeacfcf1b9bcfdd7bed8b39d5846.jkddzztszm.acm-validations.aws
   cname:
     go: d-98h5x49zxg.execute-api.ap-northeast-1.amazonaws.com
     momochi: d-uw3h3nxjfg.execute-api.ap-northeast-1.amazonaws.com
@@ -63,6 +65,9 @@ dark-kuins.net:
     # 自宅地震計(NamazuHaUrokoGaNai)。CloudFront前段。必ずgrey(proxied=false)。
     namazu: dvrrliarhuuc3.cloudfront.net
     api.namazu: d131uynvrf3xou.cloudfront.net
+    # 系統時刻偏差計測(Electabuzz)。CloudFront前段。必ずgrey(proxied=false)。
+    electabuzz: d749zv0enwqn1.cloudfront.net
+    api.electabuzz: d3ef4geoj1wkux.cloudfront.net
 nna774.net:
   acm:
     _6886cbdebf1a64dae5240fe0e0680e6b: _55a39876be1374088149adabe130d718.olprtlswtu.acm-validations.aws

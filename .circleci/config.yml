@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs:
   deploy:
     docker:
@@ -11,7 +11,6 @@ jobs:
       - run: terraform plan
       - run: terraform apply -auto-approve
 workflows:
-  version: 2
   all:
     jobs:
       - deploy:

@@ -61,22 +61,6 @@ resource "cloudflare_record" "www" {
   proxied = true
 }
 
-resource "cloudflare_record" "netbox" {
-  zone_id = var.dark-kuins_zone
-  name   = "netbox.${var.dark-kuins-net}"
-  content = "dk-netbox.herokuapp.com"
-  type   = "CNAME"
-  proxied = true
-}
-
-resource "cloudflare_record" "inside" {
-  zone_id = var.dark-kuins_zone
-  name   = "inside.${var.dark-kuins-net}"
-  content = "ushio.compute.kitashirakawa.dark-kuins.net"
-  type   = "CNAME"
-  proxied = false
-}
-
 resource "cloudflare_record" "smtp" {
   zone_id = var.dark-kuins_zone
   name   = "smtp.${var.dark-kuins-net}"

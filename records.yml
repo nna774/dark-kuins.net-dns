@@ -69,6 +69,8 @@ dark-kuins.net:
     # 系統時刻偏差計測(Electabuzz)。CloudFront前段。必ずgrey(proxied=false)。
     electabuzz: d749zv0enwqn1.cloudfront.net
     api.electabuzz: d3ef4geoj1wkux.cloudfront.net
+    # 回線の経路の記録(upstream-save)のビューワ。CloudFront前段。必ずgrey(proxied=false)。
+    upstream-save: dakesf2c1gm6t.cloudfront.net
 nna774.net:
   acm:
     _6886cbdebf1a64dae5240fe0e0680e6b: _55a39876be1374088149adabe130d718.olprtlswtu.acm-validations.aws

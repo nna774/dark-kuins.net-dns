@@ -91,11 +91,14 @@ resource "cloudflare_record" "bluesky" {
   proxied = false
 }
 
-resource "cloudflare_record" "example" {
+import {
+  to = cloudflare_record.spf-nna774-net
+  id = "3fe12308573ed4ea31993fd0cfb98f07/a8de1073e07c431420a1fd4c1663aa96"
+}
+resource "cloudflare_record" "spf-nna774-net" {
   zone_id = var.nna774_zone
-  name   = "example.${var.nna774-net}"
-  content = "192.50.220.189"
-  type   = "A"
+  name   = var.nna774-net
+  content = "v=spf1 include:_spf.google.com ~all"
+  type   = "TXT"
   proxied = false
 }
-

@@ -15,7 +15,7 @@ dark-kuins.net:
     compute:
       hoshino:
         v4: 192.50.220.185
-        v6: 2001:df0:8500:a702::14
+        v6: 2001:df0:8500:a703::14
   nakanoshima: #GCP
     compute:
       kasuga:

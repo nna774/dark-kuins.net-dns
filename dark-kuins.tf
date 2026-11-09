@@ -131,3 +131,11 @@ resource "cloudflare_record" "tokura-ptp-yukari" {
   type   = "AAAA"
   proxied = false
 }
+
+resource "cloudflare_record" "tokura-user-vlan" {
+  zone_id = var.dark-kuins_zone
+  name   = "user-vlan.tokura.router.kitashirakawa.${var.dark-kuins-net}"
+  content = "2001:df0:8500:a7a3::10"
+  type   = "AAAA"
+  proxied = false
+}

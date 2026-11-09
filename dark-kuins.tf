@@ -91,3 +91,43 @@ resource "cloudflare_record" "kizuna-ptp-rola" {
   type   = "AAAA"
   proxied = false
 }
+
+resource "cloudflare_record" "kizuna-ptp-yukari" {
+  zone_id = var.dark-kuins_zone
+  name   = "ptp-yukari.kizuna.router.kitashirakawa.${var.dark-kuins-net}"
+  content = "2001:df0:8500:a702::1"
+  type   = "AAAA"
+  proxied = false
+}
+
+resource "cloudflare_record" "kizuna-ptp-hoshino" {
+  zone_id = var.dark-kuins_zone
+  name   = "ptp-hoshino.kizuna.router.kitashirakawa.${var.dark-kuins-net}"
+  content = "2001:df0:8500:a703::1"
+  type   = "AAAA"
+  proxied = false
+}
+
+resource "cloudflare_record" "yukari-ptp-kizuna" {
+  zone_id = var.dark-kuins_zone
+  name   = "ptp-kizuna.yukari.router.kitashirakawa.${var.dark-kuins-net}"
+  content = "2001:df0:8500:a702::2"
+  type   = "AAAA"
+  proxied = false
+}
+
+resource "cloudflare_record" "yukari-ptp-tokura" {
+  zone_id = var.dark-kuins_zone
+  name   = "ptp-tokura.yukari.router.kitashirakawa.${var.dark-kuins-net}"
+  content = "2001:df0:8500:a704::1"
+  type   = "AAAA"
+  proxied = false
+}
+
+resource "cloudflare_record" "tokura-ptp-yukari" {
+  zone_id = var.dark-kuins_zone
+  name   = "ptp-yukari.tokura.router.kitashirakawa.${var.dark-kuins-net}"
+  content = "2001:df0:8500:a704::2"
+  type   = "AAAA"
+  proxied = false
+}

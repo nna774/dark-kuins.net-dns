@@ -139,3 +139,17 @@ resource "cloudflare_record" "tokura-user-vlan" {
   type   = "AAAA"
   proxied = false
 }
+
+# *.dark-kuins.net の DNS-01 用。tsugu が certbot で書くので、ゾーン全体を書ける Cloudflare のトークンを渡さずに済むよう Route53 へ委任する。
+# 委任先のゾーンは nna774/dark-kuins.net-infra の tf/acme-challenge.tf。
+variable "acme_challenge_name_servers" {
+  default = ["ns-122.awsdns-15.com", "ns-1290.awsdns-33.org", "ns-1655.awsdns-14.co.uk", "ns-798.awsdns-35.net"]
+}
+resource "cloudflare_record" "acme-challenge-ns" {
+  count   = length(var.acme_challenge_name_servers)
+  zone_id = var.dark-kuins_zone
+  name    = "_acme-challenge.${var.dark-kuins-net}"
+  content = element(var.acme_challenge_name_servers, count.index)
+  type    = "NS"
+  ttl     = 3600
+}
